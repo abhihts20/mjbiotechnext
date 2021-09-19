@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import $ from 'jquery';
+import Link from 'next/link'
 
 const Navbar = ({children}) => {
 
@@ -91,7 +92,7 @@ const Navbar = ({children}) => {
                                     <a className="nav-link active" aria-current="page" href="#">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#about-us">About Us</a>
+                                    <Link  href="#about-us"><a className="nav-link">About Us</a></Link>
                                 </li>
 
                                 <li className="nav-item dropdown">

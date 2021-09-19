@@ -3,9 +3,9 @@ import animations from '../../styles/Animations.module.css';
 
 const HomeLayout = () => {
 
-    useEffect(()=>{
-
-    },[])
+    useEffect(() => {
+        // console.log(__dirname+"build")
+    }, [])
     return (
         <>
             <section>
@@ -103,10 +103,16 @@ const HomeLayout = () => {
 
 
             </section>
-            <section className="mt-5 mb-5" id="about-us">
+            <section style={{
+                marginTop: '150px',
+                marginBottom: '100px',
+            }} id="about-us">
+
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-6 col-sm-12 order-1 order-lg-0">
+                    <div className="row" style={{
+                        marginBottom:'100px'
+                    }}>
+                        <div className="col-lg-6 col-md-12 col-sm-12 order-1 order-lg-0">
                             <div className="d-flex justify-content-center">
                                 <div className="parent">
                                     <div data-aos="fade-right" id="farmer-div" data-aos-delay="100"
@@ -134,7 +140,7 @@ const HomeLayout = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="main-header col-md-6 col-sm-12 order-0 order-lg-1">
+                        <div className="main-header col-lg-6 col-md-12 col-sm-12 order-0 order-lg-1">
                             <p style={{
                                 color: '#4DB748',
                                 fontWeight: 'bold',
@@ -151,13 +157,61 @@ const HomeLayout = () => {
                                 believable.</p>
                         </div>
                     </div>
+
                 </div>
+                <div className="mjbi-about-header">
+                    <div className="container">
+                        <div className={"row"}>
+                            <div className="col-lg-6 col-md-12 col-sm-12 order-0 order-lg-1 d-flex justify-content-center align-items-center">
+
+                                    <img
+                                        src="assets/images/logo.png"
+                                        height={300}
+                                        width={300}
+                                    />
+                            </div>
+                            <div className="col-lg-6 col-md-12 col-sm-12 order-1 order-lg-1">
+                                <div className="d-flex justify-content-start">
+                                    <p className="mjbi-main-header-text3">
+                                        Making a pioneer beginning in 2004, we diversified to granulated customized organic
+                                        & micro
+                                        nutrient fertilizer,pesticides. The farmer belief and trust has been with us and
+                                        that trusted
+                                        association has kept us and our products a FIRST choice amongst farmers.
+                                        The increasing use of organic fertilizer & Bio Pesticide for agriculture is being
+                                        advocated
+                                        widely for reasons known and understood by all. Irresponsible use of chemicals in
+                                        soil and on
+                                        plants have shown serious effects on quality of output and its impact on human and
+                                        cattle
+                                        health. Its high time we restrict use of synthetic harmful chemicals and replace it
+                                        with
+                                        botanical, bio and biological solutions. The quality of agro inputs has direct
+                                        correlation with
+                                        health of human and cattle. We offer complete solutions for biological agriculture,
+                                        be it for
+                                        organic fertilizer, bio fertilizer, Organic Pesticide, Bio Pesticide, soil nutrient
+                                        management,
+                                        plant protection products pest management or water conservation at most cost
+                                        effective terms.
+                                        The products have been manufactured to save cost and reduction in inventory of
+                                        multiple inputs
+                                        and to give more outputs.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
             </section>
             <style jsx>
                 {
                     `
                       .carousel .carousel-item img {
-                        height: 93vh;
+                        height: 100vh;
                       }
 
                       @media screen and (min-width: 992px) {
@@ -213,6 +267,11 @@ const HomeLayout = () => {
                         bottom: -30px;
                         right: -30px;
                         /*border: 1px green solid;*/
+                      }
+                      
+                      .mjbi-about-header{
+                        background: #F5F0E9;
+                        padding: 1rem;
                       }
 
                       @media screen and (max-width: 480px) {
@@ -319,7 +378,21 @@ const HomeLayout = () => {
                         /*color: #6D8C54;*/
                         font-weight: bold;
                         font-size: 1.2rem;
-                      }`
+                      }
+                      .mjbi-main-header-text2 {
+                        /*color: #6D8C54;*/
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        
+                      }
+                      .mjbi-main-header-text3{
+                        font-weight: bold;
+                        margin: 10px;
+                        font-size: 1.1rem;
+                        text-align: justify;
+                        text-justify: newspaper!important;
+                      }
+`
                 }
             </style>
         </>
