@@ -17,6 +17,8 @@ class MyDocument extends Document {
                     <script async src="https://code.jquery.com/jquery-3.6.0.min.js"
                             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
                             crossOrigin="anonymous"/>
+                    {/*<script async src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"/>*/}
+                    {/*<script async src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"/>*/}
                     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
                           rel="stylesheet"/>
                     <link rel="preconnect" href="https://fonts.googleapis.com"/>

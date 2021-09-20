@@ -1,11 +1,21 @@
 import React, {useEffect} from 'react';
 import animations from '../../styles/Animations.module.css';
+import { Parallax } from 'react-parallax';
+
 
 const HomeLayout = () => {
 
-    useEffect(() => {
-        // console.log(__dirname+"build")
-    }, [])
+    const image1 =
+        "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
+
+    const insideStyles = {
+        background: "white",
+        padding: 20,
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%,-50%)"
+    };
     return (
         <>
             <section>
@@ -103,14 +113,17 @@ const HomeLayout = () => {
 
 
             </section>
+            <section id="about-us">
+
+            </section>
             <section style={{
                 marginTop: '150px',
                 marginBottom: '100px',
-            }} id="about-us">
+            }} >
 
                 <div className="container">
                     <div className="row" style={{
-                        marginBottom:'100px'
+                        marginBottom: '100px'
                     }}>
                         <div className="col-lg-6 col-md-12 col-sm-12 order-1 order-lg-0">
                             <div className="d-flex justify-content-center">
@@ -162,35 +175,47 @@ const HomeLayout = () => {
                 <div className="mjbi-about-header">
                     <div className="container">
                         <div className={"row"}>
-                            <div className="col-lg-6 col-md-12 col-sm-12 order-0 order-lg-1 d-flex justify-content-center align-items-center">
+                            <div
+
+                                className="col-lg-6 col-md-12 col-sm-12 order-0 order-lg-1 d-flex justify-content-center align-items-center">
 
                                     <img
-                                        src="assets/images/logo.png"
-                                        height={300}
-                                        width={300}
+                                        alt={""}
+                                        src={"assets/images/logo.png"}
+                                        height={350}
+                                        width={350}
+
                                     />
+
                             </div>
                             <div className="col-lg-6 col-md-12 col-sm-12 order-1 order-lg-1">
                                 <div className="d-flex justify-content-start">
                                     <p className="mjbi-main-header-text3">
-                                        Making a pioneer beginning in 2004, we diversified to granulated customized organic
+                                        Making a pioneer beginning in 2004, we diversified to granulated customized
+                                        organic
                                         & micro
                                         nutrient fertilizer,pesticides. The farmer belief and trust has been with us and
                                         that trusted
                                         association has kept us and our products a FIRST choice amongst farmers.
-                                        The increasing use of organic fertilizer & Bio Pesticide for agriculture is being
+                                        The increasing use of organic fertilizer & Bio Pesticide for agriculture is
+                                        being
                                         advocated
-                                        widely for reasons known and understood by all. Irresponsible use of chemicals in
+                                        widely for reasons known and understood by all. Irresponsible use of chemicals
+                                        in
                                         soil and on
-                                        plants have shown serious effects on quality of output and its impact on human and
+                                        plants have shown serious effects on quality of output and its impact on human
+                                        and
                                         cattle
-                                        health. Its high time we restrict use of synthetic harmful chemicals and replace it
+                                        health. Its high time we restrict use of synthetic harmful chemicals and replace
+                                        it
                                         with
                                         botanical, bio and biological solutions. The quality of agro inputs has direct
                                         correlation with
-                                        health of human and cattle. We offer complete solutions for biological agriculture,
+                                        health of human and cattle. We offer complete solutions for biological
+                                        agriculture,
                                         be it for
-                                        organic fertilizer, bio fertilizer, Organic Pesticide, Bio Pesticide, soil nutrient
+                                        organic fertilizer, bio fertilizer, Organic Pesticide, Bio Pesticide, soil
+                                        nutrient
                                         management,
                                         plant protection products pest management or water conservation at most cost
                                         effective terms.
@@ -201,12 +226,19 @@ const HomeLayout = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-
             </section>
+            <div style={{
+                marginBottom:'100px'
+            }}>
+                <Parallax bgImage={image1} strength={500}>
+                    <div style={{ height: 500 }}>
+                        <div style={insideStyles}>HTML inside the parallax</div>
+                    </div>
+                </Parallax>
+            </div>
             <style jsx>
                 {
                     `
@@ -268,8 +300,8 @@ const HomeLayout = () => {
                         right: -30px;
                         /*border: 1px green solid;*/
                       }
-                      
-                      .mjbi-about-header{
+
+                      .mjbi-about-header {
                         background: #F5F0E9;
                         padding: 1rem;
                       }
@@ -379,20 +411,16 @@ const HomeLayout = () => {
                         font-weight: bold;
                         font-size: 1.2rem;
                       }
-                      .mjbi-main-header-text2 {
-                        /*color: #6D8C54;*/
-                        font-weight: bold;
-                        font-size: 1.2rem;
-                        
-                      }
-                      .mjbi-main-header-text3{
+
+                      .mjbi-main-header-text3 {
                         font-weight: bold;
                         margin: 10px;
                         font-size: 1.1rem;
+                        color:#008000;
                         text-align: justify;
-                        text-justify: newspaper!important;
+                        text-justify: newspaper !important;
                       }
-`
+                    `
                 }
             </style>
         </>
