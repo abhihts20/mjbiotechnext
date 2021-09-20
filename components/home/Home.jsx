@@ -1,21 +1,13 @@
 import React, {useEffect} from 'react';
 import animations from '../../styles/Animations.module.css';
-import { Parallax } from 'react-parallax';
+import {Parallax} from 'react-parallax';
+import image1 from '../../public/assets/images/fa.jpg'
 
 
 const HomeLayout = () => {
 
-    const image1 =
-        "https://images.unsplash.com/photo-1498092651296-641e88c3b057?auto=format&fit=crop&w=1778&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D";
 
-    const insideStyles = {
-        background: "white",
-        padding: 20,
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%,-50%)"
-    };
+    const insideStyles = {};
     return (
         <>
             <section>
@@ -117,9 +109,8 @@ const HomeLayout = () => {
 
             </section>
             <section style={{
-                marginTop: '150px',
-                marginBottom: '100px',
-            }} >
+                marginTop: '150px'
+            }}>
 
                 <div className="container">
                     <div className="row" style={{
@@ -179,13 +170,13 @@ const HomeLayout = () => {
 
                                 className="col-lg-6 col-md-12 col-sm-12 order-0 order-lg-1 d-flex justify-content-center align-items-center">
 
-                                    <img
-                                        alt={""}
-                                        src={"assets/images/logo.png"}
-                                        height={350}
-                                        width={350}
+                                <img
+                                    alt={""}
+                                    src={"assets/images/logo.png"}
+                                    height={350}
+                                    width={350}
 
-                                    />
+                                />
 
                             </div>
                             <div className="col-lg-6 col-md-12 col-sm-12 order-1 order-lg-1">
@@ -231,11 +222,14 @@ const HomeLayout = () => {
 
             </section>
             <div style={{
-                marginBottom:'100px'
+                marginBottom: '100px'
             }}>
-                <Parallax bgImage={image1} strength={500}>
-                    <div style={{ height: 500 }}>
-                        <div style={insideStyles}>HTML inside the parallax</div>
+                <Parallax bgImage={"/assets/images/fa.jpg"} strength={500} blur={{min: -1, max: 3}}>
+                    <div style={{height: 500}}>
+                        <div className="insideStyles">
+                            Agriculture matters <br/> to the future of development<br/>
+                            <button className="btn btn-success btn-rounded btn-lg">Learn More</button>
+                        </div>
                     </div>
                 </Parallax>
             </div>
@@ -306,6 +300,18 @@ const HomeLayout = () => {
                         padding: 1rem;
                       }
 
+                      .insideStyles {
+                        padding: 20px;
+                        position: absolute;
+                        top: 40%;
+                        left: 30%;
+                        font-family: 'Shadows Into Light', cursive;
+                        font-weight: bolder;
+                        font-size: 3rem;
+                        color: #000;
+                        transform: translate(-50%, -50%);
+                      }
+
                       @media screen and (max-width: 480px) {
 
                         .carousel-text-org {
@@ -331,6 +337,12 @@ const HomeLayout = () => {
                           height: 200px;
                           max-height: 200px;
                           /*border: 1px red solid;*/
+                        }
+
+                        .insideStyles {
+                          top: 50%;
+                          left: 50%;
+                          font-size: 2rem;
                         }
                       }
 
@@ -416,7 +428,7 @@ const HomeLayout = () => {
                         font-weight: bold;
                         margin: 10px;
                         font-size: 1.1rem;
-                        color:#008000;
+                        color: #008000;
                         text-align: justify;
                         text-justify: newspaper !important;
                       }
