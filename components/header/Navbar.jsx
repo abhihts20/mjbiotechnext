@@ -37,6 +37,70 @@ const Navbar = ({children}) => {
 
     }, [])
 
+    const navLinks = [
+        {
+            link: '#',
+            label: 'Home',
+            isDropdown: false,
+            dropdownLinks: []
+        },
+        {
+            link: '#about-us',
+            label: 'About Us',
+            isDropdown: false,
+            dropdownLinks: []
+        },
+        {
+            link: '',
+            label: 'Products',
+            isDropdown: true,
+            dropdownLinks: [
+                {
+                    link: '',
+                    label: 'Organic Manures'
+                },
+                {
+                    link: '',
+                    label: 'Micro Nutrients'
+                },
+                {
+                    link: '',
+                    label: 'Plant Growth Promoter'
+                },
+                {
+                    link: '',
+                    label: 'Bio Fertilizer'
+                },
+                {
+                    link: '',
+                    label: 'Pesticide'
+                },
+                {
+                    link: '',
+                    label: 'Bio Pesticide'
+                }
+            ]
+        },
+        {
+            link: '',
+            label: 'Services',
+            isDropdown: false,
+            dropdownLinks: []
+        },
+        {
+            link: '',
+            label: 'R & D',
+            isDropdown: false,
+            dropdownLinks: []
+        },
+        {
+            link: '',
+            label: 'Marketing Network',
+            isDropdown: false,
+            dropdownLinks: []
+        },
+    ]
+
     return (
         <>
             <div>
@@ -88,54 +152,46 @@ const Navbar = ({children}) => {
                             id="navbarCenteredExample">
 
                             <ul className="navbar-nav mb-2 mb-lg-0 ">
-                                <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                    <Link  href="#about-us"><a className="nav-link">About Us</a></Link>
-                                </li>
-
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle"
-                                       href="#"
-                                       id="navbarDropdown"
-                                       role="button"
-                                       data-mdb-toggle="dropdown"
-                                       aria-expanded="false">
-                                        Products
-                                    </a>
-
-                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li>
-                                            <a className="dropdown-item" href="#">Organic Manures</a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item" href="#">Micro Nutrients</a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item" href="#">Plant Growth Promoter</a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item" href="#">Bio Fertilizer</a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item" href="#">Pesticide</a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item" href="#">Bio Pesticide</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">Services</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">R & D</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">Marketing Network</a>
-                                </li>
-
+                                {
+                                    navLinks?.map((link, index) =>
+                                        (
+                                            <li key={index}
+                                                className={`nav-item ${link?.isDropdown ? 'dropdown' : ''}`}>
+                                                {
+                                                    link?.isDropdown ? (
+                                                        <>
+                                                            <a className="nav-link dropdown-toggle"
+                                                               href="#"
+                                                               id="navbarDropdown"
+                                                               role="button"
+                                                               data-mdb-toggle="dropdown"
+                                                               aria-expanded="false">
+                                                                {link?.label}
+                                                            </a>
+                                                            <ul className="dropdown-menu"
+                                                                aria-labelledby="navbarDropdown">
+                                                                {
+                                                                    link?.dropdownLinks?.map((nestedLink, idx) => (
+                                                                        <li key={idx}>
+                                                                            <Link href={nestedLink?.link || ""}>
+                                                                                <a className="dropdown-item"
+                                                                                   >{nestedLink?.label}</a>
+                                                                            </Link>
+                                                                        </li>
+                                                                    ))
+                                                                }
+                                                            </ul>
+                                                        </>
+                                                    ) : <Link href={link?.link || ''}>
+                                                        <a
+                                                           className="nav-link"
+                                                           aria-current="page">{link?.label}</a>
+                                                    </Link>
+                                                }
+                                            </li>
+                                        )
+                                    )
+                                }
                                 <li>
                                     <button id="nav-ul-contact-btn" className="btn nav-btn">
                                         Contact Us

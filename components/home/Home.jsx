@@ -3,7 +3,6 @@ import animations from '../../styles/Animations.module.css';
 import {Parallax} from 'react-parallax';
 
 
-
 const HomeLayout = () => {
 
     return (
@@ -106,11 +105,9 @@ const HomeLayout = () => {
             <section id="about-us">
 
             </section>
-            <section style={{
-                marginTop: process.browser && window?.screen?.width > 480 ? '150px' : '50px'
-            }}>
+            <section>
 
-                <div className="container">
+                <div className="container home-container-1">
                     <div className="row" style={{
                         marginBottom: '100px'
                     }}>
@@ -237,6 +234,10 @@ const HomeLayout = () => {
                         height: 100vh;
                       }
 
+                      .home-container-1 {
+                        margin-top: 150px;
+                      }
+
                       @media screen and (min-width: 992px) {
                         .carousel-caption {
                           top: 100px;
@@ -314,6 +315,10 @@ const HomeLayout = () => {
                         .carousel-text-org {
                           font-size: 7rem !important;
 
+                        }
+
+                        .home-container-1 {
+                          margin-top: 50px;
                         }
 
                         .main-header {
