@@ -1,13 +1,11 @@
 import React, {useEffect} from 'react';
 import animations from '../../styles/Animations.module.css';
 import {Parallax} from 'react-parallax';
-import image1 from '../../public/assets/images/fa.jpg'
+
 
 
 const HomeLayout = () => {
 
-
-    const insideStyles = {};
     return (
         <>
             <section>
@@ -109,7 +107,7 @@ const HomeLayout = () => {
 
             </section>
             <section style={{
-                marginTop: '150px'
+                marginTop: process.browser && window?.screen?.width > 480 ? '150px' : '50px'
             }}>
 
                 <div className="container">
@@ -150,8 +148,7 @@ const HomeLayout = () => {
                                 fontWeight: 'bold',
                                 borderBottom: '1px solid #6D8C54',
                                 display: 'inline'
-                            }}>Our
-                                Introduction</p>
+                            }}>Our Introduction</p>
                             <p className="mjbi-main-header-text">Pure Agriculture and Organic Form</p>
                             <p className="mjbi-main-header-text1">We’re Leader in Agriculture Market</p>
                             <p className="mjbi-main-header-text2">There are many variations of passages of available
