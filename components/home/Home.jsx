@@ -1,10 +1,16 @@
 import React, {useEffect} from 'react';
 import animations from '../../styles/Animations.module.css';
 import {Parallax} from 'react-parallax';
-
+import { animateValue } from '../../js/increaseCounter';
 
 const HomeLayout = () => {
-
+        useEffect(()=>{
+            $(document).ready(function (){
+                    setTimeout(()=>{
+                        animateValue('farmer-count',0,1347122,4000);
+                    },6000)
+            })
+        })
     return (
         <>
             <section>
@@ -116,7 +122,8 @@ const HomeLayout = () => {
                                 <div className="parent">
                                     <div data-aos="fade-right" id="farmer-div" data-aos-delay="100"
                                          data-aos-duration="1500"
-                                         className="main-header-div position-absolute shadow">
+                                         className="main-header-div position-absolute shadow"
+                                    >
                                         <div className="row">
                                             <div
                                                 className="col-4 d-flex justify-content-center align-items-center align-content-center">
