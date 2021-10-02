@@ -1,16 +1,16 @@
 import React, {useEffect} from 'react';
 import animations from '../../styles/Animations.module.css';
 import {Parallax} from 'react-parallax';
-import { animateValue } from '../../js/increaseCounter';
+import {animateValue} from '../../js/increaseCounter';
 
 const HomeLayout = () => {
-        useEffect(()=>{
-            $(document).ready(function (){
-                    setTimeout(()=>{
-                        animateValue('farmer-count',0,1347122,4000);
-                    },6000)
-            })
+    useEffect(() => {
+        $(document).ready(function () {
+            setTimeout(() => {
+                animateValue('farmer-count', 0, 1347122, 4000);
+            }, 6000)
         })
+    })
     return (
         <>
             <section>

@@ -129,7 +129,7 @@ const Navbar = ({children}) => {
                         </div>
                     </div>
                 </div>
-                <nav id="navbar-top" className="navbar navbar-expand-lg p-2">
+                <nav id="navbar-top" className="navbar navbar-expand-lg p-2" data-position="fixed">
 
                     <div className="container-fluid">
                         <a className="navbar-brand"><img id="navbar-brand-image" src="../assets/images/logo.png"
