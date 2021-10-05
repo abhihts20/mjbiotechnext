@@ -1,0 +1,15 @@
+/*noinspection CssUnknownTarget*/
+.footerWrapper {
+    background-image: url("/footerImg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+
+}
+
+.footerBackgroundLayer {
+    background: #334B35;
+    opacity: 95%;
+    width: 100vw;
+    padding: 10px;
+}

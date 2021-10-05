@@ -110,3 +110,19 @@
         width: 100%;
     }
 }
+
+
+.animatedUpDownInfinite {
+    animation: MoveUpDown 2s linear infinite;
+    position: relative;
+}
+
+@keyframes MoveUpDown {
+    0%,
+    100% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 10px;
+    }
+}

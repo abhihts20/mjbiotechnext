@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import animations from '../../styles/Animations.module.css';
 import {Parallax} from 'react-parallax';
 import {animateValue} from '../../js/increaseCounter';
+import faImg from '/public/fa.jpg'
 
 const HomeLayout = () => {
     useEffect(() => {
@@ -127,7 +128,7 @@ const HomeLayout = () => {
                                         <div className="row">
                                             <div
                                                 className="col-4 d-flex justify-content-center align-items-center align-content-center">
-                                                <img alt="" src={"/assets/images/farmer.png"} height="50" width="50"/>
+                                                <img alt="" src={"/farmer.png"} height="50" width="50"/>
                                             </div>
                                             <div className="col-8 align-content-center">
                                                 <h4 id="farmer-count"
@@ -173,9 +174,10 @@ const HomeLayout = () => {
 
                                 <img
                                     alt={""}
-                                    src={"assets/images/logo.png"}
+                                    src={"/logo.png"}
                                     height={350}
                                     width={350}
+                                    className={animations.animatedUpDownInfinite}
 
                                 />
 
@@ -225,7 +227,7 @@ const HomeLayout = () => {
             <div style={{
                 marginBottom: '100px'
             }}>
-                <Parallax bgImage={"/assets/images/fa.jpg"} strength={500} blur={{min: -1, max: 3}}>
+                <Parallax bgImage="/fa.jpg" strength={500} blur={{min: -1, max: 3}}>
                     <div style={{height: 500}}>
                         <div className="insideStyles">
                             Agriculture matters <br/> to the future of development<br/>
@@ -234,6 +236,11 @@ const HomeLayout = () => {
                     </div>
                 </Parallax>
             </div>
+            <section id={"services"}>
+                <div>
+
+                </div>
+            </section>
             <style jsx>
                 {
                     `

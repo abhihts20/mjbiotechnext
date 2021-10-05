@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import $ from 'jquery';
 import Link from 'next/link'
+import Footer from "../footer/footer";
 
 const Navbar = ({children}) => {
 
@@ -132,7 +133,7 @@ const Navbar = ({children}) => {
                 <nav id="navbar-top" className="navbar navbar-expand-lg p-2" data-position="fixed">
 
                     <div className="container-fluid">
-                        <a className="navbar-brand"><img id="navbar-brand-image" src="../assets/images/logo.png"
+                        <a className="navbar-brand"><img id="navbar-brand-image" src="/logo.png"
                                                          alt="LOGO"/></a>
                         <button
                             id="toggler-btn"
@@ -217,6 +218,7 @@ const Navbar = ({children}) => {
                 </nav>
             </div>
             {children}
+            <Footer />
         </>
 
     );
