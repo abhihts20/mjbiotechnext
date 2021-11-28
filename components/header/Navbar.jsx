@@ -40,6 +40,7 @@ const Navbar = ({children}) => {
 
     const handleNavLinkClickMobile = (event) => {
         // console.log(event);
+        console.log(window.screen.width)
         if (window?.screen?.width < 992 && !event?.target?.classList?.contains("dropdown-toggle")) {
             document.getElementById('navbarCenteredExample').classList.remove('show');
             $('#toggler-icon').removeClass('fa-times');

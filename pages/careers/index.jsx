@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Form, Formik} from 'formik';
 import CheckBox from '../../helpers/FormFields/CheckBox';
 import TextInput from "../../helpers/FormFields/TextBox";
 import SelectField from "../../helpers/FormFields/SelectField";
 import * as Yup from 'yup';
+import REG_EXP from "../../helpers/RegExp";
 
 const Contact = () => {
-
-    const phoneRegExp = '';
+    const [acceptedTermsCheck, setAcceptedTermsCheck] = useState(false)
 
     return (
         <>
@@ -45,9 +45,27 @@ const Contact = () => {
                                 email: '',
                                 mobile: '',
                                 experience: ''
-                            }} onSubmit={async (values, {}) => {
+                            }} validationSchema={
+                                Yup.object({
+                                    name: Yup.string().max(20, '20 Characters are allowed').required('Required'),
+                                    email: Yup.string().email('Invalid Email Address'),
+                                    mobile: Yup.string().min(10, 'Invalid Mobile Number').matches(REG_EXP.phone, "Invalid Mobile Number").required('Required'),
+                                    experience: Yup.string().max(500, '500 Characters are allowed').required('Required'),
+                                    passingYear: Yup.string().min(4, 'Must be of 4 Characters').required('Required'),
+                                    jobType: Yup.string()
+                                        .oneOf(
+                                            ['Branch Manager', 'Team Manager', 'Sales Officer', 'Sales Executive'],
+                                            'Invalid Job Type'
+                                        )
+                                        .required('Required'),
+                                    acceptedTerms: Yup.boolean()
+                                        .required('Required')
+                                        .oneOf([true], 'You must accept the terms and conditions.'),
+                                })
+                            }
+                                    onSubmit={async (values, {}) => {
 
-                            }}>
+                                    }}>
                                 {({handleSubmit, resetForm, isSubmitting, dirty}) => (
                                     <Form onSubmit={handleSubmit}>
                                         <TextInput
@@ -116,6 +134,19 @@ const Contact = () => {
                                                 }
                                             }}
                                         />
+                                        <CheckBox name="acceptedTerms"
+                                                  onClick={() => setAcceptedTermsCheck(!acceptedTermsCheck)}>
+                                            &nbsp;&nbsp;I accept that the information provided is best of my
+                                            knowledge
+                                        </CheckBox>
+
+                                        <button type="submit" className="btn btn-success"
+                                                style={{margin: '0 10px 10px 0'}}>Submit
+                                        </button>
+                                        <button type="reset" disabled={isSubmitting}
+                                                className="btn btn-danger"
+                                                style={{margin: '0 0px 10px 0'}}>Reset
+                                        </button>
                                     </Form>
                                 )}
                             </Formik>
