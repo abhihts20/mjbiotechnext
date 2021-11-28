@@ -13,3 +13,7 @@
     width: 100vw;
     padding: 10px;
 }
+
+.footerBottomStick{
+    bottom: 0;
+}
