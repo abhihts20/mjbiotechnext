@@ -96,21 +96,21 @@ const Navbar = ({children}) => {
             ]
         },
         {
-            link: '',
+            link: '/services',
             label: 'Services',
             isDropdown: false,
             dropdownLinks: [],
             isActive: true
         },
         {
-            link: '',
+            link: '/rnd',
             label: 'R & D',
             isDropdown: false,
             dropdownLinks: [],
             isActive: true
         },
         {
-            link: '',
+            link: '/marketing',
             label: 'Marketing Network',
             isDropdown: false,
             dropdownLinks: [],
@@ -213,7 +213,7 @@ const Navbar = ({children}) => {
                                         )
                                     }
                                     <li className="d-flex justify-content-around">
-                                        <Link href="/careers">
+                                        <Link href="/contact">
                                             <button onClick={handleNavLinkClickMobile} id="nav-ul-contact-btn"
                                                     className="btn nav-btn">
                                                 Contact Us
@@ -232,7 +232,7 @@ const Navbar = ({children}) => {
                             </div>
 
 
-                            <Link href="/">
+                            <Link href="/contact">
                                 <button id="nav-contact-btn" className="btn nav-btn">
                                     Contact Us
                                 </button>

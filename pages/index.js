@@ -10,7 +10,7 @@ export default function Home() {
                 <Head>
                     <title>Mj Biotech Industries</title>
                     <meta name="description" content="Mjbiotech Industries"/>
-                    <link rel="icon" href={"/assets/images/logo.png"}/>
+                    <link rel="icon" href={"/logo.png"}/>
                 </Head>
                 <HomeLayout/>
             </div>

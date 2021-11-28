@@ -5,37 +5,37 @@ import TextInput from "../../helpers/FormFields/TextBox";
 import SelectField from "../../helpers/FormFields/SelectField";
 import * as Yup from 'yup';
 import REG_EXP from "../../helpers/RegExp";
+import Head from "next/head";
 
 const Contact = () => {
     const [acceptedTermsCheck, setAcceptedTermsCheck] = useState(false)
 
     return (
         <>
+            <Head>
+                <title>Careers | Mj Biotech Industries</title>
+                <meta name="description" content="Mjbiotech Industries"/>
+                <link rel="icon" href={"/logo.png"}/>
+            </Head>
             <section id="career-form">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <h1 id="career-grow-heading" className="underline-text">Grow with Us.</h1>
                             <br/>
-                            <p id="">
+                            <p style={{
+                                color:'black'
+                            }}>
                                 We count on the ambition and creativity of our employees and offer them an exciting
-                                mix of
-                                responsibility and visibility to help us enhance our position as a global
-                                agri-business leader. We
-                                have an entrepreneurial spirit, so the employees are challenged every day to
-                                exemplify our vision
-                                through their innovation, dedication, and integrity.
-                                We have many locations across India, with each location requiring employees with
-                                diverse backgrounds
-                                - those with different thoughts, perceptions and skill sets. Our wide reach offers
-                                the employees a
-                                chance to learn from and share their ideas with talented people all over India. Yet
-                                our
-                                people-centric culture encourages personal interaction and collaboration so they are
-                                always a
-                                valued, integral part of the team. With a variety of careers available, the
-                                opportunities are
-                                endless.</p>
+                                mix of responsibility and visibility to help us enhance our position as a global
+                                agri-business leader. We have an entrepreneurial spirit, so the employees are challenged
+                                every day to exemplify our vision through their innovation, dedication, and integrity.We
+                                have many locations across India, with each location requiring employees with diverse
+                                backgrounds - those with different thoughts, perceptions and skill sets. Our wide reach
+                                offers the employees a chance to learn from and share their ideas with talented people
+                                all over India. Yet our people-centric culture encourages personal interaction and
+                                collaboration so they are always a valued, integral part of the team. With a variety of
+                                careers available, the opportunities are endless.</p>
                         </div>
                         <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                             <h1 className="underline-text">Apply Here</h1>
