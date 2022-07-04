@@ -3,10 +3,11 @@ import animations from '../../styles/Animations.module.css';
 import {Parallax} from 'react-parallax';
 import {animateValue} from '../../js/increaseCounter';
 import faImg from '/public/fa.jpg'
+import $ from 'jquery';
 
 const HomeLayout = () => {
     useEffect(() => {
-        $(document).ready(function () {
+        $(function(){
             setTimeout(() => {
                 animateValue('farmer-count', 0, 1347122, 4000);
             }, 6000)
